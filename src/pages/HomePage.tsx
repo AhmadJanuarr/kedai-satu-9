@@ -28,15 +28,36 @@ export default function HomePage() {
       <div className="relative flex flex-col items-center justify-center w-full px-5">
         <div className="absolute w-full h-96 bg-[#f7c8a5] -z-10"></div>
         <div className="flex flex-col items-center">
-          <h1 className="mt-5 text-4xl font-delius">Kedai satu 9</h1>
-          <p className="mt-5 text-center text-[0.9rem] font-deliusSwash xl:text-[1.5rem]">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mt-5 text-4xl font-delius"
+          >
+            Kedai satu 9
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="mt-5 text-center text-[0.9rem] font-deliusSwash xl:text-[1.5rem]"
+          >
             Nikmati berbagai pilihan menu lezat yang siap menggoyang lidahmu! Dari makanan khas hingga hidangan modern
-          </p>
+          </motion.p>
         </div>
       </div>
       <div className="flex flex-col mx-5 mt-5">
         {DATAS_MENUS.map((menu) => (
-          <motion.figure>
+          <motion.figure
+            key={menu.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className="relative"
+          >
             <img
               src={menu.img}
               alt={menu.title}

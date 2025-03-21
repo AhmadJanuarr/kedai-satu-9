@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        delius : ['Delius Unicase', 'cursive'],
+        deliusSwash : ['Delius Swash Caps', 'cursive'],
+      }
+    },
   },
   plugins: [],
 }

@@ -24,15 +24,17 @@ export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="w-full h-min-screen flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center flex-col w-full px-5 relative">
-        <div className="absolute w-full h-96 bg-[#99BC85] -z-10"></div>
-        <h1 className="text-4xl mt-5">Kedai satu 9</h1>
-        <p className="mt-5 text-center text-[0.8rem]">
-          Nikmati berbagai pilihan menu lezat yang siap menggoyang lidahmu! Dari makanan khas hingga hidangan modern
-        </p>
+    <div className="flex flex-col items-center justify-center w-full h-min-screen">
+      <div className="relative flex flex-col items-center justify-center w-full px-5">
+        <div className="absolute w-full h-96 bg-[#f7c8a5] -z-10"></div>
+        <div className="flex flex-col items-center">
+          <h1 className="mt-5 text-4xl font-delius">Kedai satu 9</h1>
+          <p className="mt-5 text-center text-[0.9rem] font-deliusSwash xl:text-[1.5rem]">
+            Nikmati berbagai pilihan menu lezat yang siap menggoyang lidahmu! Dari makanan khas hingga hidangan modern
+          </p>
+        </div>
       </div>
-      <div className="flex flex-col mt-5">
+      <div className="flex flex-col mx-5 mt-5">
         {DATAS_MENUS.map((menu) => (
           <motion.figure>
             <img
@@ -41,14 +43,16 @@ export default function HomePage() {
               className="object-cover rounded-lg"
               onClick={() => setSelectedImage(menu.img)}
             />
-            <figcaption className="text-center pt-2 pb-6">{menu.title}</figcaption>
+            <figcaption className="pt-2 pb-6 font-semibold text-center font-deliusSwash">
+              ----{menu.title}----
+            </figcaption>
           </motion.figure>
         ))}
       </div>
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 px-5 bg-black bg-opacity-80 flex justify-center items-center"
+            className="fixed inset-0 flex items-center justify-center px-5 bg-black bg-opacity-80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -65,7 +69,7 @@ export default function HomePage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 whileTap={{ scale: 0.9 }}
-                className="absolute -top-6 0 -right-5 w-full items-end justify-end flex"
+                className="absolute flex items-end justify-end w-full -top-6 0 -right-5"
                 onClick={() => setSelectedImage(null)}
               >
                 <X size={44} className="text-red-700" />

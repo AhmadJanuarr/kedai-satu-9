@@ -1,3 +1,5 @@
-# Kedai satu 9
+# Kedai satu 9 - barcode scan
 
-## coming soon
+## Example barcode app 
+
+<img src="/example/example1.png" width="800px" alt="example"/>
